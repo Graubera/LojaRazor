@@ -8,11 +8,20 @@ namespace LojaRazor.Models
 {
     public class Usuario
     {
+        public enum EnumSexo
+        {
+            Masculino,
+            Feminino
+        }
         [Required]
         public String Nome { get; set; }
 
         [Required, EmailAddress]
         public String Email { get; set; }
+
+        public EnumSexo Sexo { get; set; }
+
+        public Estado Estado { get; set; }
 
         [Required, MinLength(3)]
         public String Senha { get; set; }
@@ -30,6 +39,6 @@ namespace LojaRazor.Models
 
         public string Observacoes { get; set; }
 
-        public bool RecebePromocoes { get; set; }
+        public bool RecebePromocoes { get; set; }        
     }
 }
